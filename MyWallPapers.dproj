@@ -1,0 +1,192 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{f05d9516-d601-4ebf-ab50-5e04e6033d38}</ProjectGuid>
+        <MainSource>MyWallPapers.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>MyWallPapers.exe</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>14.6</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_MinorVer>8</VerInfo_MinorVer>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=L.P.Dem[!];FileDescription=Программа для управления заставками;FileVersion=1.8.0.0;InternalName=Мои заставки;LegalCopyright=L.P.Dem[!];LegalTrademarks=L.P.Dem[!];OriginalFilename=MyWallPapers.exe;ProductName=Мои заставки;ProductVersion=1.7.0.0;Comments=Jenny Я Тебя Люблю!;Last Compile=2011-10-24 18:01</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>MyWallPapers_Icon1.ico</Icon_MainIcon>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;Last Compile=2011-10-24 18:01</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>MyWallPapers_Icon1.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>False</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_DcuOutput>DCU\</DCC_DcuOutput>
+        <DCC_ObjOutput>DCU\</DCC_ObjOutput>
+        <DCC_HppOutput>DCU\</DCC_HppOutput>
+        <DCC_UnitSearchPath>$(DELPHI)\Lib\Debug;C:\Components\Jedi\jcl\lib\D7\debug;C:\COMPON~1\Jedi\jcl\lib\D7\debug;C:\Projects\FastMM;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>$(DELPHI)\Lib\Debug;C:\Components\Jedi\jcl\lib\D7\debug;C:\COMPON~1\Jedi\jcl\lib\D7\debug;C:\Projects\FastMM;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>$(DELPHI)\Lib\Debug;C:\Components\Jedi\jcl\lib\D7\debug;C:\COMPON~1\Jedi\jcl\lib\D7\debug;C:\Projects\FastMM;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>$(DELPHI)\Lib\Debug;C:\Components\Jedi\jcl\lib\D7\debug;C:\COMPON~1\Jedi\jcl\lib\D7\debug;C:\Projects\FastMM;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_DcuOutput>DCU\</DCC_DcuOutput>
+        <DCC_ObjOutput>DCU\</DCC_ObjOutput>
+        <DCC_HppOutput>DCU\</DCC_HppOutput>
+        <DCC_ResourcePath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+        <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>True</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>MyWallPapers.ico</Icon_MainIcon>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2</VerInfo_MajorVer>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <VerInfo_Keys>CompanyName=LPDem;FileDescription=Программа для управления заставками;FileVersion=2.1.0.0;InternalName=Мои заставки;LegalCopyright=LPDem;LegalTrademarks=LPDem;OriginalFilename=MyWallPapers.exe;ProductName=Мои заставки;ProductVersion=2.1.0.0;Comments=;Last Compile=2011-10-24 18:01</VerInfo_Keys>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">8</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">L.P.Dem[!]</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">Программа для управления заставками</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">1.8.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">Мои заставки</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright">L.P.Dem[!]</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks">L.P.Dem[!]</VersionInfoKeys>
+                    <VersionInfoKeys Name="OriginalFilename">MyWallPapers.exe</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">Мои заставки</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.7.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments">Jenny Я Тебя Люблю!</VersionInfoKeys>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">MyWallPapers.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k180.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp180.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="uMain.pas">
+            <Form>FmMain</Form>
+        </DCCReference>
+        <DCCReference Include="uCommon.pas"/>
+        <DCCReference Include="Resample.pas"/>
+        <DCCReference Include="Thumbnails.pas"/>
+        <DCCReference Include="uInputQuery.pas">
+            <Form>FmInputQuery</Form>
+        </DCCReference>
+        <DCCReference Include="uSettings.pas">
+            <Form>FmSettings</Form>
+        </DCCReference>
+        <DCCReference Include="uMisc.pas"/>
+        <DCCReference Include="MultInst.pas"/>
+        <DCCReference Include="FormPlacement.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>
