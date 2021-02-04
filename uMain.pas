@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, CheckLst, ComCtrls, ImgList,
-  ExtCtrls, Jpeg, Menus, ActnList, ExtDlgs, ExtActns, XPListView, System.Actions;
+  ExtCtrls, Jpeg, Menus, ActnList, ExtDlgs, ExtActns, XPListView, System.Actions,
+  System.ImageList;
 
 type
   TFmMain = class(TForm)

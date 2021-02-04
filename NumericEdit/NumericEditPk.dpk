@@ -1,11 +1,11 @@
-package XPListViewPk;
+package NumericEditPk;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
 {$BOOLEVAL OFF}
-{$DEBUGINFO ON}
+{$DEBUGINFO OFF}
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
@@ -24,14 +24,15 @@ package XPListViewPk;
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
 {$ENDIF IMPLICITBUILDING}
-{$DESCRIPTION 'XPListView Package'}
+{$DESCRIPTION 'Numeric Edit'}
 {$IMPLICITBUILD ON}
 
 requires
-  vcl,
-  rtl;
+  rtl,
+  vcl;
 
 contains
-  XPListView in 'XPListView.pas';
+  NumericEdit in 'NumericEdit.pas',
+  EditWithButton in 'EditWithButton.pas';
 
 end.

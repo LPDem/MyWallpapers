@@ -41,8 +41,8 @@ var
   ThumbnailsFile: string;
 
   //Разрешение экрана при запуске
+  Desktop_W, Desktop_H: Integer;
   Screen_W, Screen_H: Integer;
-  WorkArea_W, WorkArea_H: Integer;
 
 procedure LoadSettings;
 procedure SaveSettings;
@@ -60,7 +60,7 @@ function GetSystemFolder(const nFolder: Integer): string;
 
 implementation
 
-uses SysUtils, ShlObj, DateUtils, ShellAPI;
+uses SysUtils, ShlObj, DateUtils, ShellAPI, System.UITypes, Forms;
 
 function TDefRegistry.ReadBoolDef(const Name: string; Default: Boolean): Boolean;
 begin
@@ -132,14 +132,11 @@ begin
 end;
 
 procedure GetScreenResolution;
-var
-  Dsk_Rect: TRect;
 begin
-  SystemParametersInfo(SPI_GETWORKAREA, 0, @Dsk_Rect, 0);
-  Screen_W := Dsk_Rect.Right - Dsk_Rect.Left;
-  Screen_H := Dsk_Rect.Bottom - Dsk_Rect.Top;
-  WorkArea_W := GetSystemMetrics(SM_CXVIRTUALSCREEN);
-  WorkArea_H := GetSystemMetrics(SM_CYVIRTUALSCREEN);
+  Desktop_W := Screen.WorkAreaWidth;
+  Desktop_H := Screen.WorkAreaHeight;
+  Screen_W := Screen.Width;
+  Screen_H := Screen.Height;
 end;
 
 procedure SaveSettings;
@@ -219,6 +216,54 @@ begin
   end;
 end;
 
+procedure CreateWallpaper(const Source: TBitmap; const Dest: TBitmap);
+var
+  Dest_W, Dest_H: Integer;
+  Coeff_X, Coeff_Y, Coeff_Res: Single;
+  Res_W, Res_H: Integer;
+  Bitmap: TBitmap;
+begin
+  if UseWorkArea then
+  begin
+    Dest_W := Desktop_W;
+    Dest_H := Desktop_H;
+  end else
+  begin
+    Dest_W := Dest.Width;
+    Dest_H := Dest.Height;
+  end;
+
+  if StretchAnyway then
+  begin
+    Res_W := Dest_W;
+    Res_H := Dest_H;
+  end else
+  begin
+    Coeff_X := Dest_W / Source.Width;
+    Coeff_Y := Dest_H / Source.Height;
+    Coeff_Res := Min(Coeff_X, Coeff_Y);
+    Res_W := Round(Source.Width * Coeff_Res);
+    Res_H := Round(Source.Height * Coeff_Res);
+  end;
+
+  Bitmap := TBitmap.Create;
+  try
+    Bitmap.Width := Res_W;
+    Bitmap.Height := Res_H;
+    Bitmap.PixelFormat := pf24bit;
+
+    SmoothResize(Source, Bitmap);
+
+    Dest.Canvas.FillRect(Rect(0, 0, Dest.Width + 1, Dest.Height + 1));
+
+    BitBlt(Dest.Canvas.Handle, (Dest_W - Res_W) div 2, (Dest_H - Res_H) div 2,
+      Res_W, Res_H, Bitmap.Canvas.Handle, 0, 0, SRCCOPY);
+
+  finally
+    Bitmap.Free;
+  end;
+end;
+
 procedure SetWallPaper(FileName: string);
 var
   JpegImage: TJPEGImage;
@@ -253,28 +298,17 @@ begin
         if not UseCurrResolution then
           GetScreenResolution;
 
-        if UseWorkArea then
-        begin
-          WallPaper.Width := Screen_W;
-          WallPaper.Height := Screen_H;
-        end else
-        begin
-          WallPaper.Width := WorkArea_W;
-          WallPaper.Height := WorkArea_H;
-        end;
+        WallPaper.Width := Screen_W;
+        WallPaper.Height := Screen_H;
 
-        if StretchAnyway then
-        begin
-          SmoothResize(Bitmap, WallPaper);
-        end else
-        begin
-          CreateThumbnail(Bitmap, WallPaper);
-        end;
+        CreateWallpaper(Bitmap, WallPaper);
 
         if UseCalendar then
           CreateCalendar(WallPaper);
 
-        DataFolder := GetSystemFolder(CSIDL_APPDATA);
+        DataFolder := GetSystemFolder(CSIDL_LOCAL_APPDATA) + '\MyWallPapers';
+        ForceDirectories(DataFolder);
+
         WallPaperName := DataFolder + '\WallPaper.bmp';
         WallPaper.SaveToFile(WallPaperName);
 
@@ -282,9 +316,13 @@ begin
         try
           Reg.RootKey := HKEY_CURRENT_USER;
           Reg.OpenKey('Control Panel\Desktop', True);
-          Reg.WriteString('WallpaperStyle', '0');
-          Reg.WriteString('TileWallpaper', '1');
+
+          // Fill
+          Reg.WriteString('WallpaperStyle', '10');
+          Reg.WriteString('TileWallpaper', '0');
+
           Reg.CloseKey;
+
           Reg.OpenKey(RegKey, True);
           Reg.WriteString('CurrentWallPaper', FileName);
           Reg.WriteDate('WallPaperDate', Now);

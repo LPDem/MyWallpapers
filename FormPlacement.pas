@@ -55,12 +55,12 @@ begin
       if Reg.ValueExists('State') then
         S := TWindowState(Reg.ReadInteger('State'));
     end;
-    X := ((Screen.DesktopWidth div 2) + Screen.DesktopLeft - (W div 2));
-    Y := ((Screen.DesktopHeight div 2) + Screen.DesktopTop - (H div 2));
-    if X < Screen.DesktopLeft then
-      X := Screen.DesktopLeft;
-    if Y < Screen.DesktopTop then
-      Y := Screen.DesktopTop;
+    X := ((Screen.WorkAreaWidth div 2) + Screen.WorkAreaLeft - (W div 2));
+    Y := ((Screen.WorkAreaHeight div 2) + Screen.WorkAreaTop - (H div 2));
+    if X < Screen.WorkAreaLeft then
+      X := Screen.WorkAreaLeft;
+    if Y < Screen.WorkAreaTop then
+      Y := Screen.WorkAreaTop;
     Form.SetBounds(X, Y, W, H);
     Form.WindowState := S;
   finally

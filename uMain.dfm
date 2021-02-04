@@ -43,7 +43,7 @@ object FmMain: TFmMain
       Height = 586
       OnClickCheck = Clb_CollectionsClickCheck
       Anchors = [akLeft, akTop, akRight, akBottom]
-      ItemHeight = 13
+      ItemHeight = 20
       PopupMenu = Menu_Collections
       Sorted = True
       TabOrder = 0

@@ -3,23 +3,25 @@
 
 [Setup]
 AppName=Мои заставки
-AppVerName=Мои заставки 2.1
-AppPublisher=L.P.Dem[!]
-DefaultDirName={pf}\MyWallPapers
+AppVerName=Мои заставки 2.2
+AppPublisher=Dem
+DefaultDirName={autopf}\MyWallPapers
 DefaultGroupName=Мои заставки
 AllowNoIcons=true
+DisableDirPage=no
+DisableProgramGroupPage=no
 OutputDir=Setup_Exe
-OutputBaseFilename=MyWallPapers_Setup
+OutputBaseFilename=MyWallPapers_Setup_2.2
 Compression=lzma/ultra
 SolidCompression=true
 InternalCompressLevel=ultra
-AppCopyright=L.P.Dem[!]
+AppCopyright=Dem
 ShowLanguageDialog=auto
 WizardImageFile=C:\Program Files (x86)\Inno Setup\WizModernImage-IS.bmp
 WizardSmallImageFile=C:\Program Files (x86)\Inno Setup\WizModernSmallImage-IS.bmp
 AppID={{95F3C712-98BE-412D-BACD-937CA37AA472}
-VersionInfoVersion=2.1.0.0
-VersionInfoCompany=L.P.Dem[!]
+VersionInfoVersion=2.2.0.0
+VersionInfoCompany=Dem
 PrivilegesRequired=none
 
 [Tasks]

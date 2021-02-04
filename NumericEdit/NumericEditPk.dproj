@@ -1,12 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{3996e200-d7bd-4249-92c1-2bb048656a01}</ProjectGuid>
-        <MainSource>XPListViewPk.dpk</MainSource>
+        <ProjectGuid>{f8285cef-4066-44ac-89b1-b103a299dc9c}</ProjectGuid>
+        <MainSource>NumericEditPk.dpk</MainSource>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <DCC_DependencyCheckOutputName>C:\Components_2007\BPL\XPListViewPk.bpl</DCC_DependencyCheckOutputName>
+        <DCC_DependencyCheckOutputName>..\BPL\NumericEditPk.bpl</DCC_DependencyCheckOutputName>
         <FrameworkType>VCL</FrameworkType>
-        <ProjectVersion>14.6</ProjectVersion>
+        <ProjectVersion>18.8</ProjectVersion>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -18,11 +18,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-        <Base_Win64>true</Base_Win64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -43,59 +38,71 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
-        <DCC_Description>XPListView Package</DCC_Description>
+        <DCC_IOChecking>false</DCC_IOChecking>
+        <DCC_Description>Numeric Edit</DCC_Description>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <GenPackage>true</GenPackage>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <GenDll>true</GenDll>
-        <GenPackage>true</GenPackage>
         <DCC_ImageBase>00400000</DCC_ImageBase>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;Last Compile=2011-10-24 16:45</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;Last Compile=2011-10-24 14:42</VerInfo_Keys>
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <SanitizedProjectName>NumericEditPk</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>vcl;XPListViewPk;$(DCC_UsePackage)</DCC_UsePackage>
-        <Icon_MainIcon>XPListViewPk_Icon.ico</Icon_MainIcon>
+        <Icon_MainIcon>NumericEditPk_Icon.ico</Icon_MainIcon>
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vcl;$(DCC_UsePackage)</DCC_UsePackage>
-        <Icon_MainIcon>XPListViewPk_Icon.ico</Icon_MainIcon>
+        <DCC_UsePackage>vcl;NumericEditPk;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <Version>7.0</Version>
-        <DCC_DebugInformation>False</DCC_DebugInformation>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_IOChecking>False</DCC_IOChecking>
         <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>True</DCC_RangeChecking>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_MapFile>3</DCC_MapFile>
-        <DCC_ExeOutput>..\DCU</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Components\DCU</DCC_DcuOutput>
+        <DCC_ObjOutput>C:\Components\DCU</DCC_ObjOutput>
+        <DCC_HppOutput>C:\Components\DCU</DCC_HppOutput>
+        <DCC_BplOutput>C:\Components\BPL</DCC_BplOutput>
+        <DCC_DcpOutput>C:\Components\DCP</DCC_DcpOutput>
         <DCC_UnitSearchPath>$(DELPHI)\Lib\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_ResourcePath>$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
         <DCC_ObjPath>$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
         <DCC_IncludePath>$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Version>7.0</Version>
-        <DCC_MapFile>3</DCC_MapFile>
-        <DCC_ExeOutput>..\DCU</DCC_ExeOutput>
-        <DCC_ResourcePath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
-        <DCC_ObjPath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
-        <DCC_IncludePath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_IOChecking>False</DCC_IOChecking>
         <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>True</DCC_RangeChecking>
-        <DCC_BplOutput>C:\Components_2007\BPL</DCC_BplOutput>
-        <DCC_DcpOutput>C:\Components_2007\DCP</DCC_DcpOutput>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_DcuOutput>DCU</DCC_DcuOutput>
+        <DCC_ObjOutput>C:\Components_2007\DCU</DCC_ObjOutput>
+        <DCC_HppOutput>C:\Components_2007\DCU</DCC_HppOutput>
+        <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
+        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
+        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <DCC_IOChecking>true</DCC_IOChecking>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
-        <DCC_BplOutput>D:\LPDem\Projects\Components\BPL</DCC_BplOutput>
-        <DCC_DcpOutput>D:\LPDem\Projects\Components\DCP</DCC_DcpOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ProjectExtensions>
@@ -136,16 +143,15 @@
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
                 <Source>
-                    <Source Name="MainSource">XPListViewPk.dpk</Source>
+                    <Source Name="MainSource">NumericEditPk.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k180.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp180.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
@@ -155,9 +161,10 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="vcl.dcp"/>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="XPListView.pas"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="NumericEdit.pas"/>
+        <DCCReference Include="EditWithButton.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -171,4 +178,5 @@
         </BuildConfiguration>
     </ItemGroup>
     <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
 </Project>

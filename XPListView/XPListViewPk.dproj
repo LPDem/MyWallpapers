@@ -1,17 +1,17 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{60474274-044a-4c13-9941-d87a2e36afad}</ProjectGuid>
-        <MainSource>MyWallPapersTray.dpr</MainSource>
+        <ProjectGuid>{3996e200-d7bd-4249-92c1-2bb048656a01}</ProjectGuid>
+        <MainSource>XPListViewPk.dpk</MainSource>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <DCC_DependencyCheckOutputName>MyWallPapersTray.exe</DCC_DependencyCheckOutputName>
-        <FrameworkType>None</FrameworkType>
+        <DCC_DependencyCheckOutputName>C:\Components_2007\BPL\XPListViewPk.bpl</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>18.8</ProjectVersion>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
-        <AppType>Console</AppType>
+        <AppType>Package</AppType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -38,20 +38,25 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <VerInfo_MinorVer>3</VerInfo_MinorVer>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;Vcl;Vcl.Imaging;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_Description>XPListView Package</DCC_Description>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1049</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=L.P.Dem[!];FileDescription=Значок для области задач;FileVersion=1.3.0.0;InternalName=Мои заставки Tray;LegalCopyright=L.P.Dem[!];LegalTrademarks=L.P.Dem[!];OriginalFilename=MyWallPapersTray.exe;ProductName=Мои заставки Tray;ProductVersion=1.3.0.0;Comments=Jenny Я Тебя Люблю!</VerInfo_Keys>
-        <SanitizedProjectName>MyWallPapersTray</SanitizedProjectName>
-        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
-        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;Last Compile=2011-10-24 16:45</VerInfo_Keys>
+        <SanitizedProjectName>XPListViewPk</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <Icon_MainIcon>MyWallPapersTray_Icon.ico</Icon_MainIcon>
-        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <DCC_UsePackage>vcl;XPListViewPk;$(DCC_UsePackage)</DCC_UsePackage>
+        <Icon_MainIcon>XPListViewPk_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Debugger_HostApplication>C:\Projects\MyWallPapers\MyWallPapers.exe</Debugger_HostApplication>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <Version>7.0</Version>
@@ -59,64 +64,44 @@
         <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_MapFile>3</DCC_MapFile>
-        <DCC_DcuOutput>DCU\</DCC_DcuOutput>
-        <DCC_ObjOutput>DCU\</DCC_ObjOutput>
-        <DCC_HppOutput>DCU\</DCC_HppOutput>
+        <DCC_ExeOutput>..\DCU</DCC_ExeOutput>
         <DCC_UnitSearchPath>$(DELPHI)\Lib\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_ResourcePath>$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
         <DCC_ObjPath>$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
         <DCC_IncludePath>$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
-        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
-        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
-        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Version>7.0</Version>
         <DCC_MapFile>3</DCC_MapFile>
-        <DCC_DcuOutput>DCU\</DCC_DcuOutput>
-        <DCC_ObjOutput>DCU\</DCC_ObjOutput>
-        <DCC_HppOutput>DCU\</DCC_HppOutput>
-        <DCC_ResourcePath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
-        <DCC_ObjPath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
-        <DCC_IncludePath>C:\COMPON~2\JEDI\JCL\lib\d11\debug;C:\Components_2007\JEDI\JVCL\lib\D11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
-        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
-        <DCC_SYMBOL_LIBRARY>False</DCC_SYMBOL_LIBRARY>
-        <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
-        <DCC_UNIT_LIBRARY>False</DCC_UNIT_LIBRARY>
-        <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+        <DCC_ExeOutput>..\DCU</DCC_ExeOutput>
+        <DCC_ResourcePath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>C:\Components_2007\JEDI\JCL\lib\d11\debug;D:\Components_2007\JEDI\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(DELPHI)\Lib\Debug;$(DCC_IncludePath)</DCC_IncludePath>
         <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>True</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>MyWallPapersTray.ico</Icon_MainIcon>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
-        <VerInfo_MajorVer>2</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=Dem;FileDescription=My WallPapers Tray;FileVersion=2.2.0.0;InternalName=My WallPapers Tray;LegalCopyright=Dem;LegalTrademarks=Dem;OriginalFilename=MyWallPapersTray.exe;ProductName=My WallPapers Tray;ProductVersion=2.2.0.0;Comments=;Last Compile=;ProgramID=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
-        <AppDPIAwarenessMode>system</AppDPIAwarenessMode>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_DcuOutput>DCU</DCC_DcuOutput>
     </PropertyGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <Borland.ProjectType>Package</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Parameters>
-                    <Parameters Name="HostApplication">C:\Projects\MyWallPapers\MyWallPapers.exe</Parameters>
                     <Parameters Name="UseLauncher">False</Parameters>
                     <Parameters Name="LoadAllSymbols">True</Parameters>
                     <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
                 </Parameters>
                 <VersionInfo>
-                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
                     <VersionInfo Name="AutoIncBuild">False</VersionInfo>
                     <VersionInfo Name="MajorVer">1</VersionInfo>
-                    <VersionInfo Name="MinorVer">3</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
                     <VersionInfo Name="Release">0</VersionInfo>
                     <VersionInfo Name="Build">0</VersionInfo>
                     <VersionInfo Name="Debug">False</VersionInfo>
@@ -128,19 +113,19 @@
                     <VersionInfo Name="CodePage">1251</VersionInfo>
                 </VersionInfo>
                 <VersionInfoKeys>
-                    <VersionInfoKeys Name="CompanyName">L.P.Dem[!]</VersionInfoKeys>
-                    <VersionInfoKeys Name="FileDescription">Значок для области задач</VersionInfoKeys>
-                    <VersionInfoKeys Name="FileVersion">1.3.0.0</VersionInfoKeys>
-                    <VersionInfoKeys Name="InternalName">Мои заставки Tray</VersionInfoKeys>
-                    <VersionInfoKeys Name="LegalCopyright">L.P.Dem[!]</VersionInfoKeys>
-                    <VersionInfoKeys Name="LegalTrademarks">L.P.Dem[!]</VersionInfoKeys>
-                    <VersionInfoKeys Name="OriginalFilename">MyWallPapersTray.exe</VersionInfoKeys>
-                    <VersionInfoKeys Name="ProductName">Мои заставки Tray</VersionInfoKeys>
-                    <VersionInfoKeys Name="ProductVersion">1.3.0.0</VersionInfoKeys>
-                    <VersionInfoKeys Name="Comments">Jenny Я Тебя Люблю!</VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
                 <Source>
-                    <Source Name="MainSource">MyWallPapersTray.dpr</Source>
+                    <Source Name="MainSource">XPListViewPk.dpk</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -150,6 +135,7 @@
             <Platforms>
                 <Platform value="Win32">True</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
@@ -158,8 +144,9 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uMainTray.pas"/>
-        <DCCReference Include="uCommon.pas"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="XPListView.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
